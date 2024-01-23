@@ -1,0 +1,8 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+div.age {
+    font-weight: 800;
+    font-style: italic;
+}

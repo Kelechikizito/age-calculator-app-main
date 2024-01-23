@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Age calculator app</title>
 
@@ -16,20 +20,48 @@
 </head>
 <body>
 
-  
+  <div class="container">
+    <form action="" novalidate>
+      <div class="form-item">
+        <div class="day-container">
+          <div class="label"><label for="day">DAY</label></div>
+          <input type="number" name="" id="day" placeholder="DD" required>
+        </div>
 
-  Day
-  DD
+        <div class="month-container">
+          <div class="label"><label for="month">MONTH</label></div>
+          <input type="number" name="" id="month" placeholder="MM" required>
+        </div>
 
-  Month
-  MM
+        <div class="year-container">
+          <div class="label"><label for="year">YEAR</label></div>
+          <input type="number" name="" id="year" placeholder="YYYY" required>
+        </div>
+      </div>
 
-  Year
-  YYYY
+      <div class="form-item">
+        <button type="submit"><img src="./assets/images/icon-arrow.svg" alt=""></button>
+      </div>  
+    </form>
 
-  -- years
-  -- months
-  -- days
+    <div class="age">
+      <div class="year-age">
+        <h1 class="year-number">--</h1>
+        <h1>years</h1>
+      </div>
+
+      <div class="month-age">
+        <h1 class="month-number">--</h1>
+        <h1>months</h1>
+      </div>
+
+      <div class="day-age">
+        <h1 class="day-number">--</h1>
+        <h1>days</h1>
+      </div>
+    </div>
+
+  </div>
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
