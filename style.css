@@ -1,8 +1,209 @@
 body {
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 86%);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+    background-color:  rgb(255, 255, 255);
+    width: 40%;
+    gap: 2rem;
+    border-radius: 1rem 1rem 10rem 1rem;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    border-bottom: 0.001rem solid rgb(113, 111, 111);
+}
+
+.form-item:nth-child(1) {
+    display: flex;
+    width: 80%;
+}
+
+.form-item:nth-child(1) > div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+label {
+    font-size: x-small;
+    font-weight: bolder;
+    letter-spacing: 0.1rem;
+    color: rgb(113, 111, 111);
+}
+
+input {
+    width: 50%;
+    padding: 0.7rem 1rem;
+    font-size: large;
+    font-weight: bolder;
+    border: 0.01rem solid rgb(113, 111, 111);
+    border-radius: 0.2rem;
+}
+
+input::placeholder {
+    color: rgb(113, 111, 111);
+    font-size: large;
+    font-weight: bolder;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.error-msg {
+    font-size: xx-small;
+    font-style: italic;
+    position: absolute;
+    bottom: -1rem;
+    color: hsl(0, 100%, 67%);
+    display: none;
+}
+
+.btn {
+    height: fit-content;
+    position: relative;
+    bottom: -4.1rem;
+}
+
+button {
+    border-radius: 100%;
+    padding: 0.5rem;
+    border: none;
+    background-color: hsl(259, 100%, 65%);
+}
+
+button img {
+    transform: scale(0.8);
+    
 }
 
 div.age {
-    font-weight: 800;
+    font-weight: 900;
     font-style: italic;
+    font-size: xx-large;
+}
+
+div.age > div {
+    display: flex;
+    padding: 0;
+}
+
+div.age h1 {
+    margin: 0;
+}
+
+.year-number, .month-number, .day-number {
+    color: hsl(259, 100%, 65%);
+    letter-spacing: 0.1rem;
+}
+
+
+/* ACTIVE STATES */ 
+
+input:focus {
+    border-color: hsl(259, 100%, 65%);
+    outline: hsl(259, 100%, 65%);
+}
+
+button:hover {
+    background-color: hsl(0, 0%, 8%);
+    cursor: pointer;
+}
+
+button:active {
+    background-color: hsl(0, 0%, 8%);
+    transform: scale(0.98);
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width:1030px) {
+    .container {
+        width: 45%;
+    }
+}
+
+@media (max-width:930px) {
+    .container {
+        width: 50%;
+    }
+}
+
+@media (max-width:830px) {
+    .container {
+        width: 60%;
+    }
+}
+
+@media (max-width:700px) {
+    .container {
+        width: 70%;
+    }
+}
+
+@media (max-width:590px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width:500px) {
+    .container {
+        margin: 0 0.5rem;
+    }
+
+    form {
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+
+    .form-item:nth-child(1) {
+        display: flex;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    input {
+        width: 70%;
+    }
+
+    .btn {
+        text-align: center;
+        bottom: -2.1rem;
+    }
+
+    div.age {
+        font-size: x-large;
+    }
+}
+
+@media (max-width:290px) {
+    div.age {
+        font-size: large;
+    }
+
+    input {
+        width: 50%;
+    }
+
+    input {
+        font-size: medium;
+    }
+    
+    input::placeholder {
+        font-size: medium;
+    }
 }

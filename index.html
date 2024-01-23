@@ -23,23 +23,28 @@
   <div class="container">
     <form action="" novalidate>
       <div class="form-item">
+
         <div class="day-container">
           <div class="label"><label for="day">DAY</label></div>
           <input type="number" name="" id="day" placeholder="DD" required>
+          <span class="error-msg day-error">This field is required</span>
         </div>
 
         <div class="month-container">
           <div class="label"><label for="month">MONTH</label></div>
           <input type="number" name="" id="month" placeholder="MM" required>
+          <span class="error-msg month-error">This field is required</span>
         </div>
 
         <div class="year-container">
           <div class="label"><label for="year">YEAR</label></div>
           <input type="number" name="" id="year" placeholder="YYYY" required>
+          <span class="error-msg year-error">This field is required</span>
         </div>
+
       </div>
 
-      <div class="form-item">
+      <div class="form-item btn">
         <button type="submit"><img src="./assets/images/icon-arrow.svg" alt=""></button>
       </div>  
     </form>
@@ -63,9 +68,9 @@
 
   </div>
   
-  <div class="attribution">
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://kelechikizito">Kelechi Kizito Ugwu</a>.
-  </div>
+  </div> -->
 </body>
 </html>
