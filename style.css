@@ -50,6 +50,11 @@ input {
     font-weight: bolder;
     border: 0.01rem solid rgb(113, 111, 111);
     border-radius: 0.2rem;
+    -moz-appearance: textfield;
+}
+
+.invalid {
+    border: 0.01rem solid hsl(0, 100%, 67%);
 }
 
 input::placeholder {
@@ -67,6 +72,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     font-style: italic;
     position: absolute;
     bottom: -1rem;
+    line-height: 0.9;
     color: hsl(0, 100%, 67%);
     display: none;
 }
@@ -190,7 +196,7 @@ button:active {
     }
 }
 
-@media (max-width:290px) {
+@media (max-width:342px) {
     div.age {
         font-size: large;
     }
