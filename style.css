@@ -27,13 +27,16 @@ form {
 
 .form-item:nth-child(1) {
     display: flex;
-    width: 80%;
+    width: 75%;
+    justify-content: space-between;
+
 }
 
 .form-item:nth-child(1) > div {
     display: flex;
     flex-direction: column;
     position: relative;
+    width: 27% !important;
 }
 
 label {
@@ -44,14 +47,13 @@ label {
 }
 
 input {
-    width: 50%;
     padding: 0.7rem 1rem;
     font-size: large;
     font-weight: bolder;
     border: 0.01rem solid rgb(113, 111, 111);
     border-radius: 0.2rem;
-    -moz-appearance: textfield;
 }
+
 
 .invalid {
     border: 0.01rem solid hsl(0, 100%, 67%);
