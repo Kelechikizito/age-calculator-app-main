@@ -189,9 +189,6 @@ function ageCalculator() {
    
 }
 
-
-  
-
 button.click(function (e) { 
 
     if (!form[0].checkValidity()) {
@@ -220,3 +217,145 @@ button.click(function (e) {
 
     
 });
+
+
+
+// const button = $('button');
+// const form = $('form');
+// const inputs = $('input');
+// const labels = $('label');
+
+// const dayInput = $('#day');
+// const monthInput = $('#month');
+// const yearInput = $('#year');
+
+// const yearNumber = $('.year-number');
+// const monthNumber = $('.month-number');
+// const dayNumber = $('.day-number');
+
+// const dayErrorMsg = $('.day-error');
+// const monthErrorMsg = $('.month-error');
+// const yearErrorMsg = $('.year-error');
+
+// const dayLabel = $('label[for="day"]');
+// const monthLabel = $('label[for="month"]');
+// const yearLabel = $('label[for="year"]');
+
+// const currentDate = new Date();
+// yearInput.attr('max', currentDate.getFullYear());
+
+// function displayErrorMessage(errorMsgElement, errorMsgText, inputElement, labelElement, display = true) {
+//     if (display) {
+//         errorMsgElement.css('display', 'inline-block');
+//         errorMsgElement.text(errorMsgText);
+//         inputElement.addClass('invalid');
+//         labelElement.css('color', 'hsl(0, 100%, 67%)');
+//     } else {
+//         errorMsgElement.css('display', 'none');
+//         inputElement.removeClass('invalid');
+//         labelElement.css('color', 'rgb(113, 111, 111)');
+//     }
+// }
+
+// function validateInput(inputElement, errorMsgElement, errorMsgText, labelElement) {
+//     const isValMissing = inputElement[0].validity.valueMissing;
+//     const isOutOfRange = inputElement[0].validity.rangeOverflow;
+
+//     if (isValMissing || isOutOfRange) {
+//         displayErrorMessage(errorMsgElement, errorMsgText, inputElement, labelElement);
+//         return false;
+//     } else {
+//         displayErrorMessage(errorMsgElement, '', inputElement, labelElement, false);
+//         return true;
+//     }
+// }
+
+// function validateForm() {
+//     const isDayValid = validateInput(dayInput, dayErrorMsg, 'This field is required', dayLabel);
+//     const isMonthValid = validateInput(monthInput, monthErrorMsg, 'This field is required', monthLabel);
+//     const isYearValid = validateInput(yearInput, yearErrorMsg, 'This field is required', yearLabel);
+
+//     return isDayValid && isMonthValid && isYearValid;
+// }
+
+// function isValidDate(year, month, day) {
+//     const date = new Date(year, month - 1, day);
+//     return (
+//         date.getFullYear() === year &&
+//         date.getMonth() === month - 1 &&
+//         date.getDate() === day
+//     );
+// }
+
+// function updateDateDisplay(element, targetValue) {
+//     let step = 50;
+//     if (targetValue > 25) step = 35;
+//     if (targetValue > 50) step = 25;
+//     if (targetValue > 75) step = 20;
+//     if (targetValue > 100) step = 10;
+//     if (targetValue > 200) step = 1;
+
+//     let n = 0;
+//     if (targetValue === 0) {
+//         element.text(n);
+//     } else {
+//         let interval = setInterval(() => {
+//             n = n + 1;
+//             if (n === targetValue) {
+//                 clearInterval(interval);
+//             }
+//             element.text(n);
+//         }, step);
+//     }
+// }
+
+// function futureDate(ageYear, ageMonth, ageDay) {
+//     const isInvalidDate = ageYear < 0 || ageMonth < 0 || ageDay < 0;
+//     if (isInvalidDate) {
+//         displayErrorMessage(dayErrorMsg, 'Date must be in the past', inputs, labels);
+//     } else {
+//         updateDateDisplay(yearNumber, ageYear);
+//         updateDateDisplay(monthNumber, ageMonth);
+//         updateDateDisplay(dayNumber, ageDay);
+//     }
+// }
+
+// function ageCalculator() {
+//     let ageYear = currentDate.getFullYear() - Number(yearInput.val());
+//     let ageMonth = currentDate.getMonth() + 1 - Number(monthInput.val());
+//     let ageDay = currentDate.getDate() - Number(dayInput.val());
+
+//     if (currentDate.getMonth() + 1 < Number(monthInput.val()) ||
+//         (currentDate.getMonth() + 1 === Number(monthInput.val()) && currentDate.getDate() < Number(dayInput.val()))) {
+//         ageYear--;
+//         ageMonth = currentDate.getMonth() + 1 + 12 - Number(monthInput.val());
+//     }
+
+//     if (currentDate.getDate() < Number(dayInput.val())) {
+//         ageMonth--;
+//         const prevMonthDays = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();
+//         ageDay = prevMonthDays + currentDate.getDate() - Number(dayInput.val());
+//     }
+
+//     futureDate(ageYear, ageMonth, ageDay);
+// }
+
+// button.click(function (e) {
+//     if (!form[0].checkValidity()) {
+//         validateForm();
+//         e.preventDefault();
+//     } else {
+//         const year = Number(yearInput.val());
+//         const month = Number(monthInput.val());
+//         const day = Number(dayInput.val());
+
+//         if (!isValidDate(year, month, day)) {
+//             displayErrorMessage(dayErrorMsg, 'Must be a valid date', inputs, labels);
+//             e.preventDefault();
+//         } else {
+//             validateForm();
+//             ageCalculator();
+//             e.preventDefault();
+//         }
+//     }
+// });
