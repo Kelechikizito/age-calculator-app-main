@@ -124,9 +124,72 @@ function isValidDate(year, month, day) {
     );
 }
 
-function ageCalculator() {
-    
+function updateDateDisplay(el, num) {
+    let step = 50;
+    num > 25 && (step = 35);
+    num > 50 && (step = 25);
+    num > 75 && (step = 20);
+    num > 100 && (step = 10);
+    num > 200 && (step = 1);
+
+    let n = 0;
+    if (num === 0) {
+        el.text(n);
+    } else {
+        let interval = setInterval(() => {
+            n = n + 1;
+            if (n === num) {
+                clearInterval(interval);
+            }
+            el.text(n);
+        }, step);
+    }
 }
+
+function futureDate(ageYearr, ageMonthh, ageDayy) {
+    let x = Math.sign(ageYearr);
+    let y = Math.sign(ageMonthh);
+    let z = Math.sign(ageDayy);
+ 
+    if (x === -1 || y === -1 || z === -1) {
+         dayErrorMsg.css('display', 'inline-block')
+         dayErrorMsg.text('Date must be in the past');
+         inputs.addClass('invalid');
+         labels.css('color', 'hsl(0, 100%, 67%)');
+    } else {
+         updateDateDisplay(yearNumber, ageYearr);
+         updateDateDisplay(monthNumber, ageMonthh);
+         updateDateDisplay(dayNumber, ageDayy);
+    }
+ }
+ 
+
+function ageCalculator() {
+    const currentDate = new Date();
+    const year = Number(yearInput.val());
+    const month = Number(monthInput.val());
+    const day = Number(dayInput.val());
+
+    let ageYear = currentDate.getFullYear() - year;
+    let ageMonth = currentDate.getMonth() + 1 - month;
+    let ageDay = currentDate.getDate() - day;
+
+    if (currentDate.getMonth() + 1 < month || (currentDate.getMonth() + 1 === month && currentDate.getDate() < day)) {
+        ageYear--;
+        ageMonth = currentDate.getMonth() + 1 + 12 - month;
+    }
+
+    if (currentDate.getDate() < day) {
+        ageMonth--;
+        const prevMonthDays = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();
+        ageDay = prevMonthDays + currentDate.getDate() - day;
+    }
+
+    futureDate(ageYear, ageMonth, ageDay);
+   
+}
+
+
   
 
 button.click(function (e) { 
@@ -137,13 +200,17 @@ button.click(function (e) {
     } else {
 
         if (isValidDate(Number(yearInput.val()), Number(monthInput.val()), Number(dayInput.val())) === false) {
+            validateForm();
             dayErrorMsg.css('display', 'inline-block')
             dayErrorMsg.text('Must be a valid date');
             inputs.addClass('invalid');
             labels.css('color', 'hsl(0, 100%, 67%)');
             e.preventDefault();
         } else {
-            console.log('valid');
+            validateForm();
+            ageCalculator();
+            e.preventDefault();
+
             
         }
 
